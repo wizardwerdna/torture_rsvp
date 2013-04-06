@@ -21,7 +21,7 @@ describe("using reduce to sum integers using promises", function(){
     var pZero =  new Promise;
     pZero.resolve(0)
     var array = [];
-    var iters = 10;
+    var iters = 1000;
     for (var i=1; i<=iters; i++)
       array.push(i)
     var result = array.reduce(function(promise, nextVal) {
