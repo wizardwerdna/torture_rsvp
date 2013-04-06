@@ -21,14 +21,14 @@ describe("using reduce to sum integers using promises", function(){
     var pZero =  new Promise;
     pZero.resolve(0)
     var array = [];
-    var iters = 1000;
+    var iters = 10;
     for (var i=1; i<=iters; i++)
       array.push(i)
     var result = array.reduce(function(promise, nextVal) {
       return promise.then(function(currentVal) {
         var pNext = new Promise;
         pNext.resolve(currentVal + nextVal);
-        return pNext.promise;
+        return pNext;
       });
     }, pZero);
     result.then(function(value){
